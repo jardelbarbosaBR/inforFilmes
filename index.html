@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-4 ">
+        <div class="col d-flex justify-content-center">
+            <div class="input-group" style="width: 60%;">
+                <input type="text" id="pesquisar" class="form-control" placeholder="Pesquisa um filme" aria-label="Pesquisa um filme" aria-describedby="button-addon2">
+                <button class="btn btn-primary" type="button" id="btnPesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="row row-cols-auto align-items-center justify-content-center mt-5 listarfilmes">
+              <!--Aqui vai aparecer a lista de filmes que foi pesquisado-->
+        </div>
+         <div class="row justify-content-center align-items-center text-center py-4 inforFilmeExibir">
+         
+        </div>
+    </div>
+    
+</body>
+<script src="search.js"></script>
+</html>

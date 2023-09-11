@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#capa-poster{
+    width: 250px;
+}
+
+#titulofilme{
+    font-weight: 500;
+}
+#ano-filme{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+#tag-ano{
+   font-size: 12px;
+}
+.icone-logo{
+    width: 20px;
+    margin-right: 5px;
+}
