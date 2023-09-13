@@ -10,6 +10,7 @@ bntBuscar.addEventListener('click',() =>{
         alert("Coloque o nome do filme")
         return
     }
+    inforFilmeExibir.innerHTML=""
     procurarFilme(filme)
 })
 
@@ -41,6 +42,7 @@ function exibirFilmes(filmes){
     `
         
     });
+    
     listarfilmes.innerHTML = listadeFilmes
 }
 
@@ -52,7 +54,7 @@ function maisSobre(index){
 }
 
 function pegarInfordoFilme(tituloFilme){
-    fetch(`https://www.omdbapi.com/?t=${tituloFilme}&apikey=${key}`)
+    fetch(`https://www.omdbapi.com/?t=${tituloFilme}&plot=full&apikey=${key}`)
     .then(r => r.json())
     .then(filme =>{
         exibirInfoFilme(filme)
@@ -73,22 +75,39 @@ function pegarInfordoFilme(tituloFilme){
                 <div class="row  align-items-center text-center py-4">
                 <div class="col bg-body-secondary pt-2">
                     <p><img class="icone-logo" src="img/tomate.png">Rotten Tomatoes</p>
-                    <p>${filme.Ratings[1].Value}</p>
+                    <p id="idtomate">S/N</p>
                 </div>
                 <div class="col bg-body-secondary pt-2">
                     <p><img class="icone-logo" src="img/metascore.png">Metacritic</p>
-                    <p>${filme.Ratings[2].Value}</p>
+                    <p id="idmetric">S/N</p>
                 </div>
                 <div class="col bg-body-secondary pt-2">
                     <p><img class="icone-logo" src="img/imdb.png">IMDB</p>
-                    <p>${filme.Ratings[0].Value}</p>
+                    <p id="idimdb">S/N</p>
                 </div>
             </div>
         </div>
-        
-    
     `
- }
+
+ /**
+  *     ---- Verifica se existe alguma avaliação
+  */
+    let idmetric = document.getElementById('idmetric')
+    let idimdb = document.getElementById('idimdb')
+    let idtomate = document.getElementById('idtomate')
+
+
+    filme.Ratings.forEach(item => {
+        if(item.Source === "Internet Movie Database"){
+            idimdb.textContent = item.Value
+        }else if(item.Source === "Metacritic"){
+            idmetric.textContent = item.Value 
+        }else if(item.Source === "Rotten Tomatoes"){
+            idtomate.textContent = item.Value
+        }
+    });
+}
+ 
 
 
 
@@ -120,4 +139,15 @@ function pegarInfordoFilme(tituloFilme){
         </div>
         
         `
+
+ let idtomate = document.getElementById('idtomate')
+    let idmetric = document.getElementById('idmetric')
+    let idimdb = document.getElementById('idimdb')
+
+    if(filme.hasOwnProperty("Ratings")){
+        console.log(filme)
+        console.log("Sim existe")
+    }else{
+        console.log("Não eciste")
+    }
 */
